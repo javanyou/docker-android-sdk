@@ -28,6 +28,9 @@ RUN mkdir -p /root/.android && \
   "extras;android;m2repository" "extras;google;m2repository" "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" \
   "platform-tools" "platforms;android-26" "platforms;android-25" "ndk-bundle"
 
+# accept android licenses for sdk.
+RUN yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
+
 RUN echo "SDK Manager Finish."
 ENV ANDROID_NDK_ROOT="${ANDROID_HOME}/ndk-bundle"
 ENV ANDROID_NDK="${ANDROID_NDK_ROOT}"
