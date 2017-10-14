@@ -35,6 +35,8 @@ RUN echo "SDK Manager Finish."
 ENV ANDROID_NDK_ROOT="${ANDROID_HOME}/ndk-bundle"
 ENV ANDROID_NDK="${ANDROID_NDK_ROOT}"
 ENV NDK_ROOT="${ANDROID_NDK}"
+ENV ANDROID_NDK_HOME="${ANDROID_NDK_ROOT}"
+
 # add android sdk and ndk tools to env path.
 ENV PATH="${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_NDK_ROOT}:${PATH}"
 
