@@ -31,6 +31,7 @@ RUN ${ANDROID_HOME}/tools/bin/sdkmanager --update && \
   "platform-tools" "platforms;android-26" "platforms;android-25" "ndk-bundle" "cmake;3.6.4111459"
 
 RUN echo "SDK Manager Finish."
+ENV ANDROID_SDK_HOME="${ANDROID_HOME}"
 ENV ANDROID_NDK_HOME="${ANDROID_HOME}/ndk-bundle"
 ENV PATH="${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_NDK_HOME}:${PATH}"
 
