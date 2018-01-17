@@ -26,7 +26,7 @@ RUN mkdir -p /root/.android &&  touch /root/.android/repositories.cfg
 RUN yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
 
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager --update && \
-  (while sleep 3; do echo "y"; done) | ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;26.0.0" "build-tools;25.0.3" \
+  (while sleep 3; do echo "y"; done) | ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;26.0.2" "build-tools;25.0.3" \
   "extras;android;m2repository" "extras;google;m2repository" "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" \
   "platform-tools" "platforms;android-26" "platforms;android-25" "cmake;3.6.4111459"
 
