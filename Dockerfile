@@ -58,8 +58,7 @@ RUN mkdir /opt/pmd && \
     unzip -q pmd-bin-6.8.0.zip && \
     rm pmd-bin-6.8.0.zip
 
-RUN echo "alias pmd=\"/opt/pmd/pmd-bin-6.8.0/bin/run.sh pmd\"" >> $HOME/.bashrc
-RUN echo "alias cpd=\"/opt/pmd/pmd-bin-6.8.0/bin/run.sh cpd\"" >> $HOME/.bashrc
+ENV PMD_HOME=/opt/pmd/pmd-bin-6.8.0
 
 # Update ENV PATH
 ENV PATH="${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_NDK_HOME}:${PATH}"
