@@ -3,8 +3,10 @@ FROM openjdk:8-jdk
 # Install git lfs support.
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
 
-RUN apt-get -qq update && apt-get install -qqy git-lfs cppcheck ssh file make cmake ccache lib32stdc++6 lib32z1 lib32z1-dev \
- && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get -qq update && apt-get install -qqy git-lfs cppcheck ssh file make cmake ccache lib32stdc++6 lib32z1 lib32z1-dev gcc-8 g++-8 && \
+  update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-8 && \
+  update-alternatives --config gcc && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install git lfs support.
 RUN git lfs install
