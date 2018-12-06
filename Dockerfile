@@ -32,7 +32,7 @@ RUN ${ANDROID_HOME}/tools/bin/sdkmanager --update && \
 
 # Android NDK
 # TODO: Use specified NDK version. Use ndk r14b as default.
-ENV ANDROID_NDK_VERSION r14b
+ENV ANDROID_NDK_VERSION r16b
 ENV ANDROID_NDK_HOME="${ANDROID_HOME}/ndk-bundle"
 
 # download
