@@ -50,6 +50,15 @@ RUN mkdir /opt/android-ndk-tmp && \
 # ---- End Android NDK.
 RUN echo "SDK Manager Finish."
 
+# Gralde
+ENV GRADLE_VERSION 5.1.1
+ENV GRADLE_SDK_URL https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-all.zip
+RUN curl -sSL "${GRADLE_SDK_URL}" -o gradle-${GRADLE_VERSION}-all.zip  \
+	&& unzip gradle-${GRADLE_VERSION}-all.zip -d ${SDK_HOME}  \
+	&& rm -rf gradle-${GRADLE_VERSION}-all.zip
+ENV GRADLE_HOME ${SDK_HOME}/gradle-${GRADLE_VERSION}
+ENV PATH ${GRADLE_HOME}/bin:$PATH
+
 # Configure PMD
 RUN mkdir /opt/pmd && \
     cd /opt/pmd && \
