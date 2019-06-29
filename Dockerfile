@@ -28,7 +28,7 @@ RUN yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager --update && \
   (while sleep 3; do echo "y"; done) | ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;28.0.3" "build-tools;29.0.0" \
   "extras;android;m2repository" "extras;google;m2repository" "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" \
-  "platform-tools" "platforms;android-28" "platforms;android-29" "cmake;3.10.2.4988404" "cmake;3.6.4111459"
+  "platform-tools" "platforms;android-28" "platforms;android-29" "cmake;3.6.4111459"
 
 # Android NDK
 # TODO: Use specified NDK version. Use ndk r14b as default.
