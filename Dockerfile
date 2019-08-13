@@ -1,5 +1,11 @@
 FROM openjdk:8-jdk
 
+# Add default master user
+RUN useradd --create-home --no-log-init --shell /bin/bash -ou 1000 -g 0 master
+RUN adduser master sudo
+
+USER root
+
 # Install git lfs support.
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
 
@@ -71,3 +77,5 @@ ENV PMD_HOME=/opt/pmd/pmd-bin-6.8.0
 
 # Update ENV PATH
 ENV PATH="${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_NDK_HOME}:${PATH}"
+
+USER master
