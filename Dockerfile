@@ -78,4 +78,4 @@ ENV PMD_HOME=/opt/pmd/pmd-bin-6.8.0
 # Update ENV PATH
 ENV PATH="${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_NDK_HOME}:${PATH}"
 
-USER master
+#USER master
